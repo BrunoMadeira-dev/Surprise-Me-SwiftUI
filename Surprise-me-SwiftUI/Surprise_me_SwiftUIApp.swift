@@ -11,7 +11,7 @@ import SwiftUI
 struct Surprise_me_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
         }
     }
 }
