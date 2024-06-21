@@ -13,29 +13,32 @@ struct SplashScreenView: View {
     @State private var size = 0.8
     @State private var opacity = 0.5
     var body: some View {
-        
-        if isActive {
-            SurpriseMe()
-        } else {
-            VStack {
-                VStack {
-                    Image("surprise-me-logo" )
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundStyle(Color("lightBlueColor"))
+        NavigationStack {
+            if isActive {
+                withAnimation(.easeInOut(duration: 0.8)) {
+                    SurpriseMe()
                 }
-                .scaleEffect(size)
-                .opacity(opacity)
-                .onAppear {
-                    withAnimation(.easeIn(duration: 1.2)) {
-                        self.size = 0.9
-                        self.opacity = 1.0
+            } else {
+                VStack {
+                    VStack {
+                        Image("surprise-me-logo")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundStyle(Color("lightBlueColor"))
+                    }
+                    .scaleEffect(size)
+                    .opacity(opacity)
+                    .onAppear {
+                        withAnimation(.easeIn(duration: 1.2)) {
+                            self.size = 0.9
+                            self.opacity = 1.0
+                        }
                     }
                 }
-            }
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                    self.isActive = true
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        self.isActive = true
+                    }
                 }
             }
         }

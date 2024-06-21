@@ -8,17 +8,41 @@
 import SwiftUI
 
 struct SurpriseMe: View {
+    
+    //@State private var isLoginPressed = false
+    @State private var isSigninPressed = false
+    
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Spacer()
+            Image("surprise-me-logo")
+                .resizable()
+                .scaledToFit()
+            Spacer()
+            NavigationLink {
+                LoginView()
+                    .toolbar(.hidden)
+            } label: {
+                SMButton(title: "Log In")
+            }
+            Button {
+                    isSigninPressed.toggle()
+            } label: {
+                SMButton(title: "Sign In")
+            }
+            if isSigninPressed {
+                RegisterView()
+            }
+
+            Spacer()
         }
-        .padding()
+        .ignoresSafeArea()
     }
 }
 
 #Preview {
     SurpriseMe()
 }
+
