@@ -28,6 +28,11 @@
 		548AC9142C2593A600897D0A /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548AC9132C2593A600897D0A /* RoundedShape.swift */; };
 		548AC9162C25977D00897D0A /* HeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548AC9152C25977D00897D0A /* HeaderComponent.swift */; };
 		548AC9182C2598F700897D0A /* CustomInputTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548AC9172C2598F700897D0A /* CustomInputTextfield.swift */; };
+		548AC91B2C25EC6C00897D0A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548AC91A2C25EC6C00897D0A /* MainTabView.swift */; };
+		548AC9202C25ED1800897D0A /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548AC91F2C25ED1800897D0A /* FavoritesView.swift */; };
+		548AC9242C25ED3300897D0A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548AC9232C25ED3300897D0A /* ProfileView.swift */; };
+		548AC9262C25ED3E00897D0A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548AC9252C25ED3E00897D0A /* SearchView.swift */; };
+		548AC92A2C25ED5D00897D0A /* ChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548AC9292C25ED5D00897D0A /* ChooseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,11 @@
 		548AC9132C2593A600897D0A /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
 		548AC9152C25977D00897D0A /* HeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderComponent.swift; sourceTree = "<group>"; };
 		548AC9172C2598F700897D0A /* CustomInputTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputTextfield.swift; sourceTree = "<group>"; };
+		548AC91A2C25EC6C00897D0A /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		548AC91F2C25ED1800897D0A /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		548AC9232C25ED3300897D0A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		548AC9252C25ED3E00897D0A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		548AC9292C25ED5D00897D0A /* ChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +178,11 @@
 			children = (
 				548AC9112C25937D00897D0A /* Components */,
 				548AC9062C25917A00897D0A /* Authentication */,
+				548AC9272C25ED4B00897D0A /* Choose */,
+				548AC91E2C25ECF700897D0A /* Favorites */,
+				548AC91D2C25ECEB00897D0A /* Profile */,
+				548AC91C2C25ECD300897D0A /* Search */,
+				548AC9192C25EBF700897D0A /* MainTab */,
 				548AC9052C25913300897D0A /* SMTextfields */,
 				548AC9042C25912A00897D0A /* SMButtons */,
 			);
@@ -245,6 +260,46 @@
 				548AC9172C2598F700897D0A /* CustomInputTextfield.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		548AC9192C25EBF700897D0A /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				548AC91A2C25EC6C00897D0A /* MainTabView.swift */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		548AC91C2C25ECD300897D0A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				548AC9252C25ED3E00897D0A /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		548AC91D2C25ECEB00897D0A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				548AC9232C25ED3300897D0A /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		548AC91E2C25ECF700897D0A /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				548AC91F2C25ED1800897D0A /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		548AC9272C25ED4B00897D0A /* Choose */ = {
+			isa = PBXGroup;
+			children = (
+				548AC9292C25ED5D00897D0A /* ChooseView.swift */,
+			);
+			path = Choose;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,15 +444,20 @@
 			files = (
 				544DC7A12C18B2B400F35A72 /* SurpriseMe.swift in Sources */,
 				548AC90E2C25935A00897D0A /* LoginView.swift in Sources */,
+				548AC9202C25ED1800897D0A /* FavoritesView.swift in Sources */,
 				548AC9142C2593A600897D0A /* RoundedShape.swift in Sources */,
 				544DC7CE2C19A5AE00F35A72 /* SMTextfield.swift in Sources */,
 				548AC90C2C2591C500897D0A /* AuthViewModel.swift in Sources */,
 				544DC7CC2C19A52500F35A72 /* SMButton.swift in Sources */,
+				548AC92A2C25ED5D00897D0A /* ChooseView.swift in Sources */,
 				548AC9182C2598F700897D0A /* CustomInputTextfield.swift in Sources */,
 				548AC9162C25977D00897D0A /* HeaderComponent.swift in Sources */,
 				548AC9102C25936500897D0A /* RegisterView.swift in Sources */,
+				548AC9262C25ED3E00897D0A /* SearchView.swift in Sources */,
 				544DC79F2C18B2B300F35A72 /* Surprise_me_SwiftUIApp.swift in Sources */,
 				544DC7CA2C18C0CD00F35A72 /* SplashScreenView.swift in Sources */,
+				548AC9242C25ED3300897D0A /* ProfileView.swift in Sources */,
+				548AC91B2C25EC6C00897D0A /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

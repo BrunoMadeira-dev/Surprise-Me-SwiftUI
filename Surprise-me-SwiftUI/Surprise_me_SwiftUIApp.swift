@@ -11,12 +11,17 @@ import Firebase
 @main
 struct Surprise_me_SwiftUIApp: App {
     
+    @StateObject var viewModel = AuthViewModel()
+    
     init() {
         FirebaseApp.configure()
     }
     var body: some Scene {
         WindowGroup {
-            SplashScreenView()
+            NavigationStack {
+                SplashScreenView()
+            }
+            .environmentObject(viewModel)
         }
     }
 }

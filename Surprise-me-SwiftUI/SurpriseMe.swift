@@ -15,30 +15,14 @@ struct SurpriseMe: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
-        VStack {
-            Spacer()
-            Image("surprise-me-logo")
-                .resizable()
-                .scaledToFit()
-            Spacer()
-            NavigationLink {
+        Group {
+            if viewModel.userSession == nil {
                 LoginView()
-                    .toolbar(.hidden)
-            } label: {
-                SMButton(title: "Log In")
+            } else {
+                MainTabView()
             }
-            Button {
-                    isSigninPressed.toggle()
-            } label: {
-                SMButton(title: "Sign In")
-            }
-            if isSigninPressed {
-                RegisterView()
-            }
-
-            Spacer()
+            
         }
-        .ignoresSafeArea()
     }
 }
 

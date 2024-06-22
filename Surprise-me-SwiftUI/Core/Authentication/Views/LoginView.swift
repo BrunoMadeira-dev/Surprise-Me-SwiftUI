@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    private enum Field: Int, CaseIterable {
+            case username, password
+    }
+    @FocusState private var focusedField: Field?
+    
     @State var email = ""
     @State var password = ""
+    @State private var isLoggedIn = false
+    
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         VStack {
             HeaderComponent(title1: "Hello!", title2: "Welcome Back!")
@@ -17,7 +27,20 @@ struct LoginView: View {
                 CustomInputTextfield(imageName: "envelope",
                                      placeholder: "Email",
                                      text: $email)
-                CustomInputTextfield(imageName: "lock", placeholder: "Password", text: $password)
+                CustomInputTextfield(imageName: "lock", 
+                                     placeholder: "Password",
+                                     isSecureField: true,
+                                     text: $password)
+            }
+            .focused($focusedField, equals: .username)
+            .toolbar {
+                ToolbarItem(placement: .keyboard) {
+                    Button(action: {
+                        focusedField = nil
+                    }, label: {
+                        Text("Done")
+                    })
+                }
             }
             .padding(.horizontal, 32)
             .padding(.vertical, 44)
@@ -32,15 +55,17 @@ struct LoginView: View {
                         .fontWeight(.semibold)
                         .foregroundStyle(Color("lightBlueColor"))
                         .padding(.trailing, 35)
+                        .padding(.bottom, 10)
                 }
             }
             
             Button(action: {
-                print("Call the function to login the user!")
+                viewModel.loginUser(withEmail: email,
+                                    password: password)
+
             }, label: {
                 SMButton(title: "Sign In")
             })
-            
             Spacer()
             
             NavigationLink {
