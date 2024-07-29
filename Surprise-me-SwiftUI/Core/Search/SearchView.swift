@@ -8,8 +8,36 @@
 import SwiftUI
 
 struct SearchView: View {
+    
+    @State var headerHeight: CGFloat = 230
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            VStack {
+                HStack { Spacer() }
+                Image("surprise-me-white-transparent")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.top, 70)
+                    .padding(.bottom, 15)
+            }
+            .background(Color("lightBlueColor"))
+            .frame(height: headerHeight)
+            .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight]))
+            
+            Button(action: {
+                
+                withAnimation {
+                    headerHeight = headerHeight == 230 ? 150 : 230
+                }
+                
+            }, label: {
+                SMButton(title: "Try Me")
+            })
+            
+            Spacer()
+        }
+        .ignoresSafeArea()
     }
 }
 
