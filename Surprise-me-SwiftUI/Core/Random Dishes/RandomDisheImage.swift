@@ -13,6 +13,7 @@ struct RandomDisheImage: View {
     @State var randomMeal: MealDataModel?
     @State var image: Image?
     @Environment(\.dismiss) var dismiss
+    @State private var selectedTab = 0
     
     var body: some View {
         ZStack {
@@ -23,50 +24,61 @@ struct RandomDisheImage: View {
                         isPresented = false
                     }
                 }
-            
             VStack {
-                VStack {
-                    if let image = image {
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(.rect(cornerRadius: 10))
-                            .frame(width: 200, height: 200)
-                            .clipped()
-                            .shadow(radius: 10, x: 15, y: 10)
-                            .padding(.top, 30)
-                    } else {
-                        Image("food_test")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(.rect(cornerRadius: 10))
-                            .frame(width: 200, height: 200)
-                            .clipped()
-                            .shadow(radius: 10, x: 15, y: 10)
-                            .padding(.top, 30)
-                    }
+                Picker("Select Tab", selection: $selectedTab) {
+                    Text("Recipe").tag(0)
+                    Text("Ingridients").tag(1)
                 }
-                ScrollView {
-                    LazyVStack(alignment: .leading) {
-                        RecipeDetails(fixedType: "Name:", dynamicRecipe: randomMeal?.meals[0].strMeal ?? "No name available")
-                            .padding(.top, 20)
-                        RecipeDetails(fixedType: "Category:", dynamicRecipe: randomMeal?.meals[0].strCategory ?? "No category available")
-                            .padding(.top, 20)
-                        RecipeDetails(fixedType: "Country:", dynamicRecipe: randomMeal?.meals[0].strArea ?? "No country available")
-                            .padding(.top, 20)
-                        
-                        Text("Instructions:")
-                            .fontWeight(.semibold)
-                            .font(.headline)
-                            .padding(.top, 20)
-                        
-                        Text(randomMeal?.meals[0].strInstructions ?? "No instructions available")
-                            .fontDesign(.serif)
-                            .padding(.top, 5)
+                .pickerStyle(.segmented)
+                .padding(35)
+                
+                if selectedTab == 1 {
+                    IngridientsView()
+                    Spacer()
+                } else {
+                    VStack {
+                        if let image = image {
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipShape(.rect(cornerRadius: 10))
+                                .frame(width: 200, height: 200)
+                                .clipped()
+                                .shadow(radius: 10, x: 15, y: 10)
+                                .padding(.top, 30)
+                        } else {
+                            Image("food_test")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipShape(.rect(cornerRadius: 10))
+                                .frame(width: 200, height: 200)
+                                .clipped()
+                                .shadow(radius: 10, x: 15, y: 10)
+                                .padding(.top, 30)
+                        }
                     }
-                    .padding(20)
+                    ScrollView {
+                        LazyVStack(alignment: .leading) {
+                            RecipeDetails(fixedType: "Name:", dynamicRecipe: randomMeal?.meals[0].strMeal ?? "No name available")
+                                .padding(.top, 20)
+                            RecipeDetails(fixedType: "Category:", dynamicRecipe: randomMeal?.meals[0].strCategory ?? "No category available")
+                                .padding(.top, 20)
+                            RecipeDetails(fixedType: "Country:", dynamicRecipe: randomMeal?.meals[0].strArea ?? "No country available")
+                                .padding(.top, 20)
+                            
+                            Text("Instructions:")
+                                .fontWeight(.semibold)
+                                .font(.headline)
+                                .padding(.top, 20)
+                            
+                            Text(randomMeal?.meals[0].strInstructions ?? "No instructions available")
+                                .fontDesign(.serif)
+                                .padding(.top, 5)
+                        }
+                        .padding(20)
+                    }
+                    Spacer()
                 }
-                Spacer()
             }
             .frame(width: 350, height: 620)
             .background(Color(.systemBackground))

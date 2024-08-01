@@ -18,10 +18,8 @@ struct Surprise_me_SwiftUIApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
                 SplashScreenView()
-            }
-            .environmentObject(viewModel)
+                    .environmentObject(viewModel)
         }
     }
 }

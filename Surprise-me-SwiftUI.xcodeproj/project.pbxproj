@@ -10,6 +10,7 @@
 		540119F22C51A41E0051AB12 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 540119F12C51A41E0051AB12 /* Kingfisher */; };
 		540119F52C51ACB50051AB12 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540119F42C51ACB50051AB12 /* RemoteImage.swift */; };
 		540119F72C53A0750051AB12 /* RandomDisheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540119F62C53A0750051AB12 /* RandomDisheImage.swift */; };
+		540457B62C5AD9F1000B902A /* SMBuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540457B52C5AD9F1000B902A /* SMBuyButton.swift */; };
 		544DC79F2C18B2B300F35A72 /* Surprise_me_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544DC79E2C18B2B300F35A72 /* Surprise_me_SwiftUIApp.swift */; };
 		544DC7A12C18B2B400F35A72 /* SurpriseMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544DC7A02C18B2B400F35A72 /* SurpriseMe.swift */; };
 		544DC7A32C18B2B600F35A72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 544DC7A22C18B2B600F35A72 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		54D468532C53F20700A5C889 /* SMDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D468522C53F20700A5C889 /* SMDismissButton.swift */; };
 		54D468552C53F68200A5C889 /* SMBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D468542C53F68200A5C889 /* SMBackButton.swift */; };
 		54D4685A2C543B5A00A5C889 /* CategoryDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D468592C543B5A00A5C889 /* CategoryDishes.swift */; };
+		54D4687F2C5808FF00A5C889 /* IngridientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4687E2C5808FF00A5C889 /* IngridientsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,7 @@
 		540119F32C51A4C20051AB12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		540119F42C51ACB50051AB12 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		540119F62C53A0750051AB12 /* RandomDisheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDisheImage.swift; sourceTree = "<group>"; };
+		540457B52C5AD9F1000B902A /* SMBuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMBuyButton.swift; sourceTree = "<group>"; };
 		544DC79B2C18B2B300F35A72 /* Surprise-me-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Surprise-me-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		544DC79E2C18B2B300F35A72 /* Surprise_me_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surprise_me_SwiftUIApp.swift; sourceTree = "<group>"; };
 		544DC7A02C18B2B400F35A72 /* SurpriseMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurpriseMe.swift; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 		54D468522C53F20700A5C889 /* SMDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMDismissButton.swift; sourceTree = "<group>"; };
 		54D468542C53F68200A5C889 /* SMBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMBackButton.swift; sourceTree = "<group>"; };
 		54D468592C543B5A00A5C889 /* CategoryDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDishes.swift; sourceTree = "<group>"; };
+		54D4687E2C5808FF00A5C889 /* IngridientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,7 @@
 		548AC9002C2590FA00897D0A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				54D4687D2C5808EC00A5C889 /* Ingridients */,
 				54D468582C543B4600A5C889 /* Category Dishes */,
 				548AC92B2C2B037F00897D0A /* Random Dishes */,
 				548AC9112C25937D00897D0A /* Components */,
@@ -255,6 +260,7 @@
 				544DC7CB2C19A52500F35A72 /* SMButton.swift */,
 				54D468522C53F20700A5C889 /* SMDismissButton.swift */,
 				54D468542C53F68200A5C889 /* SMBackButton.swift */,
+				540457B52C5AD9F1000B902A /* SMBuyButton.swift */,
 			);
 			path = SMButtons;
 			sourceTree = "<group>";
@@ -366,6 +372,14 @@
 				54D468592C543B5A00A5C889 /* CategoryDishes.swift */,
 			);
 			path = "Category Dishes";
+			sourceTree = "<group>";
+		};
+		54D4687D2C5808EC00A5C889 /* Ingridients */ = {
+			isa = PBXGroup;
+			children = (
+				54D4687E2C5808FF00A5C889 /* IngridientsView.swift */,
+			);
+			path = Ingridients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,7 +548,9 @@
 				544DC7CA2C18C0CD00F35A72 /* SplashScreenView.swift in Sources */,
 				548AC9242C25ED3300897D0A /* ProfileView.swift in Sources */,
 				540119F72C53A0750051AB12 /* RandomDisheImage.swift in Sources */,
+				540457B62C5AD9F1000B902A /* SMBuyButton.swift in Sources */,
 				548AC91B2C25EC6C00897D0A /* MainTabView.swift in Sources */,
+				54D4687F2C5808FF00A5C889 /* IngridientsView.swift in Sources */,
 				54D4685A2C543B5A00A5C889 /* CategoryDishes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
