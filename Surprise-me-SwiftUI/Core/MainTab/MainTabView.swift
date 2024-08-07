@@ -56,6 +56,7 @@ struct MainTabView: View {
                 .frame(width: 350, height: 70)
                 .foregroundStyle(colorScheme == .light ? Color(.white) : Color(.darkGray))
                 .shadow(radius: 10)
+                .padding(.bottom, 15)
             
             HStack() {
                 ForEach(TabbedItems.allCases, id: \.self) { items in
@@ -76,6 +77,7 @@ struct MainTabView: View {
                 }
             }
             .frame(height: 70)
+            .padding(.bottom,15)
         }
     }
 }
