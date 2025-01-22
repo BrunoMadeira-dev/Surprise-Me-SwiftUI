@@ -39,7 +39,6 @@ struct RandomDishes: View {
                 .overlay(Button {
                     withAnimation((.smooth(duration: 0.5, extraBounce: 10))) {
                         dismiss()
-                        //randomDishPressed = false
                     }
                 } label: {
                     SMBackButton()

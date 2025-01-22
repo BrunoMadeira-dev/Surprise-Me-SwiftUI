@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ProfileView: View {
     
@@ -14,22 +15,32 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
+            
+            Image(systemName: "person.circle")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .padding(.top, 50)
+                .foregroundStyle(Color(.systemGray3))
+            
             Form {
                 Text("Teste")
                 DatePicker("Birthday date", selection: $date, displayedComponents: .date)
                 
                 Button {
-                    //viewModel.logOut()
+                    viewModel.logOut()
                 } label: {
                     Text("Logout")
                         .foregroundStyle(.red)
-
                 }
                 .onTapGesture {
                     viewModel.logOut()
                 }
             }
+            
+            Text("© Bruno Madeira")
         }
+        .background(Color(.systemGray6))
 
     }
 }

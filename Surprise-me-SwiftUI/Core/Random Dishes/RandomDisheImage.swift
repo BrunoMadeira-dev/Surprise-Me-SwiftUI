@@ -90,7 +90,7 @@ struct RandomDisheImage: View {
                         Spacer()
                     }
                 }
-                .frame(width: geometry.size.width * 0.9 , height: geometry.size.width * 1.3)
+                .frame(width: getScreenBounds().width * 0.9, height: getScreenBounds().height * 0.75)
                 .background(Color(.systemBackground))
                 .clipShape(.rect(cornerRadius: 12))
                 .padding(.bottom, 120)
@@ -112,6 +112,12 @@ struct RandomDisheImage: View {
 
 #Preview {
     RandomDisheImage(isPresented: .constant(true))
+}
+
+extension View{
+   func getScreenBounds() -> CGRect{
+   return UIScreen.main.bounds
+   }
 }
 
 struct RecipeDetails: View {

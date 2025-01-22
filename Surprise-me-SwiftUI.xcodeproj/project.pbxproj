@@ -168,6 +168,7 @@
 		544DC79D2C18B2B300F35A72 /* Surprise-me-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				54E1BB0A2C6522860035D9F9 /* Utils */,
 				540119F32C51A4C20051AB12 /* Info.plist */,
 				548AC9032C25911200897D0A /* Extensions */,
 				548AC9022C25910C00897D0A /* Model */,
@@ -380,6 +381,13 @@
 				54D4687E2C5808FF00A5C889 /* IngridientsView.swift */,
 			);
 			path = Ingridients;
+			sourceTree = "<group>";
+		};
+		54E1BB0A2C6522860035D9F9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
