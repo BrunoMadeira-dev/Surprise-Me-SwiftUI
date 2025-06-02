@@ -51,8 +51,9 @@ struct RandomDishes: View {
                     ProgressView("Carregando...") // Exibe um indicador de carregamento
                         .progressViewStyle(CircularProgressViewStyle(tint: Color("lightBlueColor"))) // Estilo do indicador
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color.white.opacity(0.8)) // Fundo semi-transparente
-                        .zIndex(2) // Coloca o indicador acima dos outros elementos
+                        .background(Color.white.opacity(0.8))
+                        .blur(radius: 100)// Fundo semi-transparente
+                        .zIndex(1) // Coloca o indicador acima dos outros elementos
                 }
                 
                 Button {
@@ -88,12 +89,14 @@ struct RandomDishes: View {
 }
     
     func fetchRandomMeal(url: String, completion: @escaping (MealDataModel) -> ()) {
+        isLoading = true
         DataManager().fetchRandomFood(url: url) { result, error in
             if let error = error {
                 print("DEBUG: There was an error in: \(error.localizedDescription)")
             }
             
             if let randomMeal = result {
+                isLoading = false
                 completion(randomMeal)
             }
             print("DEBUG: Meal name is: \(randomMeal!.meals[0].strMeal ?? "Nothing!")")
